@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeCVC" customModule="WonderWall_Gallery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="155" height="212"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="155" height="212"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tgq-YF-XNq">
+                        <rect key="frame" x="0.0" y="0.0" width="155" height="212"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Tgq-YF-XNq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Mxf-S3-0Ze"/>
+                <constraint firstItem="Tgq-YF-XNq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WSV-rG-d4Z"/>
+                <constraint firstAttribute="bottom" secondItem="Tgq-YF-XNq" secondAttribute="bottom" id="dkI-vs-vKU"/>
+                <constraint firstAttribute="trailing" secondItem="Tgq-YF-XNq" secondAttribute="trailing" id="mYk-0h-t0T"/>
+            </constraints>
+            <size key="customSize" width="155" height="212"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="imgWallPaper" destination="Tgq-YF-XNq" id="5su-ua-uXP"/>
+            </connections>
+            <point key="canvasLocation" x="209.92366412213741" y="45.774647887323944"/>
+        </collectionViewCell>
+    </objects>
+</document>
