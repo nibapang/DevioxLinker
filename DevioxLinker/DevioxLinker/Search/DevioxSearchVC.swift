@@ -173,7 +173,28 @@ class DevioxSearchVC: UIViewController {
     }
     
     private func showTokenPurchaseOptions() {
-        DevioxIAPManager.shared.presentTokenPurchaseOptions(from: self)
+        
+        let alertController = UIAlertController(title: "Select a Product", message: "Please choose a product to purchase for download tokens search", preferredStyle: .alert)
+        
+        // Product options
+        let product1 = UIAlertAction(title: "100 Seach Tokens", style: .default) { _ in
+            DevioxIAPManager.shared.presentTokenPurchaseOptions(from: self, tokenProductID: "100Tokens")
+        }
+        
+        let product2 = UIAlertAction(title: "1000 Seach Tokens", style: .default) { _ in
+            DevioxIAPManager.shared.presentTokenPurchaseOptions(from: self, tokenProductID: "1000Tokens")
+        }
+        
+        // Cancel action
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        // Add actions to the alert
+        alertController.addAction(product1)
+        alertController.addAction(product2)
+        alertController.addAction(cancelAction)
+        
+        // Present the alert
+        present(alertController, animated: true, completion: nil)
     }
     
     @objc private func handleTokensPurchased() {

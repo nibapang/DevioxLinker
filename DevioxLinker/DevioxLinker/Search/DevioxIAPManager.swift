@@ -10,7 +10,6 @@ import StoreKit
 class DevioxIAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     static let shared = DevioxIAPManager()
     
-    private let tokenProductID = "com.nirav.DevioxLinker.tokens.100" // Replace with your actual product ID
     private var productsRequest: SKProductsRequest?
     private var completionHandler: ((Bool) -> Void)?
     
@@ -19,7 +18,7 @@ class DevioxIAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactio
         SKPaymentQueue.default().add(self)
     }
     
-    func presentTokenPurchaseOptions(from viewController: UIViewController) {
+    func presentTokenPurchaseOptions(from viewController: UIViewController, tokenProductID: String) {
         if SKPaymentQueue.canMakePayments() {
             let productIdentifiers = Set([tokenProductID])
             productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
