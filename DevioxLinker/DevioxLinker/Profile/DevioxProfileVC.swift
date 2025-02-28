@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class DevioxProfileVC: UIViewController {
 
     // MARK: - IBOutlets
@@ -24,6 +24,7 @@ class DevioxProfileVC: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         loadSavedImages()
+        lblTitle()
         lblName.text = "user_\(UUID())"
         lblPostCount.text = "\(arrImages.count)"
     }
@@ -104,29 +105,25 @@ class DevioxProfileVC: UIViewController {
     @IBAction func btnLoginSignUp(_ sender: Any) {
         let loginOrNot = UserDefaults.standard.bool(forKey: "login")
         if loginOrNot == true {
-            let userToken = UserDefaults.standard.value(forKey: "AuthToken") as! String
-            
-            logoutUser(apiToken: userToken) { success, message in
-                 if success {
-                     print("Logout Successful: \(message)")
-                     UserDefaults.standard.setValue(false, forKey: "login")
-                     UserDefaults.standard.removeObject(forKey: "AuthToken")
-                     print(userToken)
-                     var window: UIWindow?
-                     // Load the storyboard named "Main"
-                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                     // Instantiate the initial view controller from the storyboard
-                     let initialViewController = storyboard.instantiateInitialViewController()
-                     // Set the root view controller of the app's window
-                     window?.rootViewController = initialViewController
-                     // Make the window visible
-                     window?.makeKeyAndVisible()
-
-                     self.tabBarController?.selectedIndex = 0
-                 } else {
-                     print("Logout Failed: \(message)")
-                 }
-             }
+//            let userToken = UserDefaults.standard.value(forKey: "AuthToken") as! String
+            do{
+                try Auth.auth().signOut()
+                UserDefaults.standard.setValue(false, forKey: "login")
+                UserDefaults.standard.removeObject(forKey: "AuthToken")
+                var window: UIWindow?
+                // Load the storyboard named "Main"
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                // Instantiate the initial view controller from the storyboard
+                let initialViewController = storyboard.instantiateInitialViewController()
+                // Set the root view controller of the app's window
+                window?.rootViewController = initialViewController
+                // Make the window visible
+                window?.makeKeyAndVisible()
+                
+                self.tabBarController?.selectedIndex = 0
+            }catch{
+                Utils.showAlert(title: "Failed", message: "Logout failed", from: self)
+            }
         } else {
             var window: UIWindow?
             // Load the storyboard named "Main"
@@ -144,34 +141,28 @@ class DevioxProfileVC: UIViewController {
         
     }
     @IBAction func btnDelete(_ sender: Any) {
-        let userToken = UserDefaults.standard.value(forKey: "AuthToken") as! String
         
-        logoutUser(apiToken: userToken) { success, message in
-             if success {
-                 print("Logout Successful: \(message)")
-                 UserDefaults.standard.setValue(false, forKey: "login")
-                 UserDefaults.standard.removeObject(forKey: "AuthToken")
-                 print(userToken)
-                 var window: UIWindow?
-                 // Load the storyboard named "Main"
-                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                 // Instantiate the initial view controller from the storyboard
-                 let initialViewController = storyboard.instantiateInitialViewController()
-                 // Set the root view controller of the app's window
-                 window?.rootViewController = initialViewController
-                 // Make the window visible
-                 window?.makeKeyAndVisible()
-//                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "CustomTabBarController") as! CustomTabBarController
-//                     vc.selectedIndex = 0
-//                     self.navigationController?.pushViewController(vc, animated: false)
-//                     DispatchQueue.main.async {
-//
-//                     }
-                 self.tabBarController?.selectedIndex = 0
-             } else {
-                 print("Logout Failed: \(message)")
-             }
-         }
+        Auth.auth().currentUser?.delete(completion: { error in
+            if let err = error {
+                Utils.showAlert(title: "Alert", message: err.localizedDescription, from: self)
+            } else {
+                Utils.showAlert(title: "Delete", message: "Your account was successfully deleted", from: self)
+                UserDefaults.standard.setValue(false, forKey: "login")
+                UserDefaults.standard.removeObject(forKey: "AuthToken")
+               
+                var window: UIWindow?
+                // Load the storyboard named "Main"
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                // Instantiate the initial view controller from the storyboard
+                let initialViewController = storyboard.instantiateInitialViewController()
+                // Set the root view controller of the app's window
+                window?.rootViewController = initialViewController
+                // Make the window visible
+                window?.makeKeyAndVisible()
+                
+                self.tabBarController?.selectedIndex = 0
+            }
+        })
         self.lblTitle()
     }
 }

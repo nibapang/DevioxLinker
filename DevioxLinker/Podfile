@@ -11,4 +11,5 @@ target 'DevioxLinker' do
   pod 'SDWebImage'
   pod 'SVProgressHUD'
   pod "SkeletonView"
+  pod 'FirebaseAuth'
 end
