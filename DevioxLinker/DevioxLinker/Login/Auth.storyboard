@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gWj-cG-cha">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23090" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gWj-cG-cha">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23079"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -314,6 +315,32 @@
                                     <action selector="btnLogin:" destination="gRc-5N-Kvm" eventType="touchUpInside" id="sYX-9Z-Dsh"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="65z-AJ-r2G">
+                                <rect key="frame" x="24" y="417.5" width="327" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By longing in you are agree to our  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URr-Cp-shv">
+                                        <rect key="frame" x="0.0" y="0.0" width="188" height="25"/>
+                                        <fontDescription key="fontDescription" name="STIXTwoText_SemiBold" family="STIX Two Text" pointSize="12"/>
+                                        <color key="textColor" name="Color 4"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJL-Pl-M61">
+                                        <rect key="frame" x="196" y="0.0" width="131" height="25"/>
+                                        <fontDescription key="fontDescription" name="STIXTwoText_SemiBold" family="STIX Two Text" pointSize="13"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Terms and condition">
+                                            <color key="titleColor" name="Color 3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="termConditionBtn:" destination="iCC-pG-Hcx" eventType="touchUpInside" id="8tW-d5-aXh"/>
+                                            <action selector="termsConditionBtn:" destination="gRc-5N-Kvm" eventType="touchUpInside" id="55t-Ph-a00"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yJL-Pl-M61" firstAttribute="width" secondItem="65z-AJ-r2G" secondAttribute="width" multiplier="0.4" id="hsZ-SN-s3k"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X7p-kN-EHA"/>
                         <color key="backgroundColor" name="Color 2"/>
@@ -325,7 +352,10 @@
                             <constraint firstItem="Kgm-6k-Zal" firstAttribute="leading" secondItem="X7p-kN-EHA" secondAttribute="leading" id="J7K-of-IkV"/>
                             <constraint firstItem="a3N-x5-77N" firstAttribute="top" secondItem="8yK-lC-IPW" secondAttribute="bottom" constant="8" id="K0T-Aa-yJo"/>
                             <constraint firstItem="mrP-Hf-fpe" firstAttribute="top" secondItem="8yK-lC-IPW" secondAttribute="bottom" constant="24" id="KnR-Bb-8xO"/>
+                            <constraint firstItem="65z-AJ-r2G" firstAttribute="leading" secondItem="X7p-kN-EHA" secondAttribute="leading" constant="24" id="MNR-LN-w7C"/>
+                            <constraint firstItem="X7p-kN-EHA" firstAttribute="trailing" secondItem="65z-AJ-r2G" secondAttribute="trailing" constant="24" id="PFo-fX-Vx6"/>
                             <constraint firstItem="jzD-hF-VDr" firstAttribute="top" secondItem="mrP-Hf-fpe" secondAttribute="bottom" constant="8" id="Phw-gT-fn0"/>
+                            <constraint firstItem="65z-AJ-r2G" firstAttribute="top" secondItem="HDH-ql-X6i" secondAttribute="bottom" constant="20" id="RqL-2T-UBh"/>
                             <constraint firstItem="8yK-lC-IPW" firstAttribute="top" secondItem="wBz-ia-IUM" secondAttribute="bottom" constant="16" id="SMj-4Z-Kr4"/>
                             <constraint firstItem="X7p-kN-EHA" firstAttribute="bottom" secondItem="mzA-ue-WkL" secondAttribute="bottom" constant="24" id="WDb-UF-wGU"/>
                             <constraint firstItem="Kgm-6k-Zal" firstAttribute="height" secondItem="wxv-jY-zVE" secondAttribute="height" multiplier="0.2" id="XBI-SM-wiG"/>
@@ -400,10 +430,10 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKU-EI-d32">
-                                <rect key="frame" x="147.5" y="493.5" width="80" height="80"/>
+                                <rect key="frame" x="157.5" y="503.5" width="60" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FR-lJ-zX9">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="Color 2"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -418,20 +448,20 @@
                                 <color key="backgroundColor" name="Color 4"/>
                                 <constraints>
                                     <constraint firstItem="3FR-lJ-zX9" firstAttribute="top" secondItem="wKU-EI-d32" secondAttribute="top" id="8u9-YG-Tlm"/>
-                                    <constraint firstAttribute="height" constant="80" id="dHF-wn-yjv"/>
-                                    <constraint firstAttribute="width" constant="80" id="dvr-hc-mRx"/>
+                                    <constraint firstAttribute="height" constant="60" id="dHF-wn-yjv"/>
+                                    <constraint firstAttribute="width" constant="60" id="dvr-hc-mRx"/>
                                     <constraint firstAttribute="bottom" secondItem="3FR-lJ-zX9" secondAttribute="bottom" id="lJt-GF-HMU"/>
                                     <constraint firstItem="3FR-lJ-zX9" firstAttribute="leading" secondItem="wKU-EI-d32" secondAttribute="leading" id="sif-GQ-AoC"/>
                                     <constraint firstAttribute="trailing" secondItem="3FR-lJ-zX9" secondAttribute="trailing" id="tRY-kZ-lSh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="40"/>
+                                        <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIn-Ra-vc4">
-                                <rect key="frame" x="137.5" y="32" width="100" height="28"/>
+                                <rect key="frame" x="138" y="32" width="99.5" height="28"/>
                                 <fontDescription key="fontDescription" name="STIXTwoText_SemiBold" family="STIX Two Text" pointSize="28"/>
                                 <color key="textColor" name="Color 2"/>
                                 <nil key="highlightedColor"/>
@@ -559,7 +589,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFv-OH-3wm">
-                                <rect key="frame" x="24" y="444" width="327" height="44"/>
+                                <rect key="frame" x="24" y="432" width="327" height="44"/>
                                 <color key="backgroundColor" name="Color 1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="DUX-jo-gBP"/>
@@ -603,6 +633,31 @@
                                     <action selector="btnShowConfirmPass:" destination="iCC-pG-Hcx" eventType="touchUpInside" id="at9-PY-TST"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MBo-qF-JfU">
+                                <rect key="frame" x="24" y="492" width="327" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By siging in you are agree to our  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjW-0J-9YP">
+                                        <rect key="frame" x="0.0" y="0.0" width="188" height="25"/>
+                                        <fontDescription key="fontDescription" name="STIXTwoText_SemiBold" family="STIX Two Text" pointSize="12"/>
+                                        <color key="textColor" name="Color 2"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLX-d4-ZYM">
+                                        <rect key="frame" x="196" y="0.0" width="131" height="25"/>
+                                        <fontDescription key="fontDescription" name="STIXTwoText_SemiBold" family="STIX Two Text" pointSize="13"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Terms and condition">
+                                            <color key="titleColor" name="Color 3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="termConditionBtn:" destination="iCC-pG-Hcx" eventType="touchUpInside" id="Oh9-2x-xgZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="TLX-d4-ZYM" firstAttribute="width" secondItem="MBo-qF-JfU" secondAttribute="width" multiplier="0.4" id="KvF-kG-85g"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l7Y-J9-Ygw"/>
                         <color key="backgroundColor" name="Color 4"/>
@@ -616,9 +671,9 @@
                             <constraint firstItem="y7Y-Kw-CSr" firstAttribute="leading" secondItem="l7Y-J9-Ygw" secondAttribute="leading" constant="24" id="7zj-cg-hLX"/>
                             <constraint firstItem="l7Y-J9-Ygw" firstAttribute="trailing" secondItem="n1h-7k-Szx" secondAttribute="trailing" constant="24" id="8Uc-D7-Mpv"/>
                             <constraint firstItem="7iC-o1-fIb" firstAttribute="top" secondItem="1NP-PQ-UbN" secondAttribute="bottom" constant="8" id="BGy-aP-p2l"/>
-                            <constraint firstItem="MFv-OH-3wm" firstAttribute="top" secondItem="4Rj-aT-YiB" secondAttribute="bottom" constant="32" id="BIw-V5-9Qk"/>
+                            <constraint firstItem="MFv-OH-3wm" firstAttribute="top" secondItem="4Rj-aT-YiB" secondAttribute="bottom" constant="20" id="BIw-V5-9Qk"/>
                             <constraint firstItem="WIn-Ra-vc4" firstAttribute="top" secondItem="l7Y-J9-Ygw" secondAttribute="top" constant="12" id="C1I-ld-X0c"/>
-                            <constraint firstItem="O69-ic-BmE" firstAttribute="top" secondItem="wKU-EI-d32" secondAttribute="bottom" constant="-40" id="C71-rU-DyS"/>
+                            <constraint firstItem="O69-ic-BmE" firstAttribute="top" secondItem="wKU-EI-d32" secondAttribute="bottom" constant="-30" id="C71-rU-DyS"/>
                             <constraint firstItem="WIn-Ra-vc4" firstAttribute="centerX" secondItem="l7Y-J9-Ygw" secondAttribute="centerX" id="GIG-R2-HAv"/>
                             <constraint firstItem="l7Y-J9-Ygw" firstAttribute="trailing" secondItem="4Rj-aT-YiB" secondAttribute="trailing" constant="24" id="K8Y-9G-ZRO"/>
                             <constraint firstItem="l7Y-J9-Ygw" firstAttribute="trailing" secondItem="1NP-PQ-UbN" secondAttribute="trailing" constant="24" id="Q17-lB-kdh"/>
@@ -630,9 +685,11 @@
                             <constraint firstItem="vy3-16-KvA" firstAttribute="top" secondItem="7iC-o1-fIb" secondAttribute="bottom" constant="16" id="Uhj-L8-OeV"/>
                             <constraint firstItem="l7Y-J9-Ygw" firstAttribute="trailing" secondItem="O69-ic-BmE" secondAttribute="trailing" id="WoC-nR-y9Z"/>
                             <constraint firstItem="4Rj-aT-YiB" firstAttribute="leading" secondItem="l7Y-J9-Ygw" secondAttribute="leading" constant="24" id="XB2-uT-Uh5"/>
+                            <constraint firstItem="MBo-qF-JfU" firstAttribute="leading" secondItem="l7Y-J9-Ygw" secondAttribute="leading" constant="24" id="Yyv-pd-O5a"/>
                             <constraint firstItem="kTL-23-9qw" firstAttribute="leading" secondItem="l7Y-J9-Ygw" secondAttribute="leading" constant="24" id="Zii-tm-fnm"/>
                             <constraint firstItem="kh6-WT-Pb2" firstAttribute="centerY" secondItem="4Rj-aT-YiB" secondAttribute="centerY" id="bsF-uW-bOJ"/>
                             <constraint firstItem="n1h-7k-Szx" firstAttribute="top" secondItem="y7Y-Kw-CSr" secondAttribute="bottom" constant="8" id="byB-Ru-aKp"/>
+                            <constraint firstItem="MBo-qF-JfU" firstAttribute="top" secondItem="MFv-OH-3wm" secondAttribute="bottom" constant="16" id="d1i-4n-35i"/>
                             <constraint firstItem="7iC-o1-fIb" firstAttribute="leading" secondItem="l7Y-J9-Ygw" secondAttribute="leading" constant="24" id="dxo-Xn-xcw"/>
                             <constraint firstItem="l7Y-J9-Ygw" firstAttribute="trailing" secondItem="MFv-OH-3wm" secondAttribute="trailing" constant="24" id="ed5-4u-kNF"/>
                             <constraint firstItem="wKU-EI-d32" firstAttribute="centerX" secondItem="l7Y-J9-Ygw" secondAttribute="centerX" id="hDM-np-rCy"/>
@@ -646,6 +703,7 @@
                             <constraint firstItem="ToX-Q7-tnr" firstAttribute="top" secondItem="kTL-23-9qw" secondAttribute="bottom" constant="8" id="pf4-WL-M72"/>
                             <constraint firstItem="l7Y-J9-Ygw" firstAttribute="trailing" secondItem="7iC-o1-fIb" secondAttribute="trailing" constant="24" id="qyn-R2-JJH"/>
                             <constraint firstItem="kTL-23-9qw" firstAttribute="top" secondItem="WIn-Ra-vc4" secondAttribute="bottom" constant="24" id="sdy-je-fnn"/>
+                            <constraint firstAttribute="trailing" secondItem="MBo-qF-JfU" secondAttribute="trailing" constant="24" id="uMR-vK-2NH"/>
                             <constraint firstItem="l7Y-J9-Ygw" firstAttribute="trailing" secondItem="vy3-16-KvA" secondAttribute="trailing" constant="24" id="uQy-lm-42v"/>
                             <constraint firstItem="l7Y-J9-Ygw" firstAttribute="trailing" secondItem="kh6-WT-Pb2" secondAttribute="trailing" constant="32" id="vfi-hu-S1i"/>
                         </constraints>
@@ -672,6 +730,9 @@
         </namedColor>
         <namedColor name="Color 2">
             <color red="1" green="0.9649999737739563" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color 3">
+            <color red="0.50199997425079346" green="0.76899999380111694" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Color 4">
             <color red="0.37599998712539673" green="0.29800000786781311" blue="0.76499998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

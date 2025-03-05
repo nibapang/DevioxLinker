@@ -23,7 +23,12 @@ class DevioxLoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // print(UserDefaults.standard.value(forKey: "accessToken") ?? "no value")
-        
+        let alertController = UIAlertController(title: "Alert", message: "Please check Terms and Conditions.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            
+            present(alertController, animated: true, completion: nil)
     }
     
     //MARK: - Declare IBAction
@@ -58,4 +63,15 @@ class DevioxLoginVC: UIViewController {
             sender.setImage(UIImage(named: "ic_password_show"), for: .normal)
         }
     }
+    
+    
+    @IBAction func termsConditionBtn(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let termsVC = storyboard.instantiateViewController(withIdentifier: "TermsConditionVC") as? TermsConditionVC {
+            self.navigationController?.pushViewController(termsVC, animated: true)
+        }
+    }
+    
 }

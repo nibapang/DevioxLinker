@@ -79,4 +79,17 @@ class DevioxSignUpVC: UIViewController {
             Utils.showAlert(title: "Password Unmatched", message: "Password and confirm password does not matched", from: self)
         }
     }
+    
+
+    
+    @IBAction func termConditionBtn(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let termsVC = storyboard.instantiateViewController(withIdentifier: "TermsConditionVC") as? TermsConditionVC {
+            self.navigationController?.pushViewController(termsVC, animated: true)
+        }
+        
+    }
+    
 }

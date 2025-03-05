@@ -59,6 +59,15 @@ class DevioxAuthNavigationVC: UIViewController {
         }
     }
     
-    //MARK: - Declare IBAction
+    @IBAction func termAndConditionBtn(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let termsVC = storyboard.instantiateViewController(withIdentifier: "TermsConditionVC") as? TermsConditionVC {
+            self.navigationController?.pushViewController(termsVC, animated: true)
+        }
+        
+    }
+    
     
 }
